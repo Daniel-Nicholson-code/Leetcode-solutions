@@ -4,7 +4,7 @@ Leetcode gives me an easy way to program everyday, to give me a break from the p
 purposes. I'm doing the questions in numerical order, so the code will be higher quality the larger the number is. I'm only doing this
 in Python and C++.
 
-This project is documented on my website:\
+This is documented in more detail on my website:\
 *INCLUDE LATER*
 
 [My Leetcode profile](https://leetcode.com/u/Daniel-Nicholson/)
