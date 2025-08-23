@@ -3,29 +3,27 @@
 
 class Solution(object):
     def mergeTwoLists(self, list1, list2):
-        """
-        :type list1: Optional[ListNode]
-        :type list2: Optional[ListNode]
-        :rtype: Optional[ListNode]
-        """
 
-        dummy = ListNode()
-        cur = dummy
+        # Create a new list and the head of it
+        merge = item = ListNode()
 
-        while list1 and list2:
-            if list1.val > list2.val:
-                cur.next = list2
-                list2 = list2.next
-            else:
-                cur.next = list1
+        # Repeat until all of the items in one of lists have been
+        # exhausted
+        while (list1 is not None) and (list2 is not None):
+
+            # Add the smallest value to the merged list
+            if list1.val < list2.val:
+                item.next = list1
                 list1 = list1.next
-            
-            cur = cur.next
+            else:
+                item.next = list2
+                list2 = list2.next
+
+            # Increment the counter
+            item = item.next
+
+        # Once reached the end of one of the lists, add the other list on
+        # to the merged list
+        item.next = list1 or list2
         
-        if list1:
-            cur.next = list1
-        else:
-            cur.next = list2
-        
-        return dummy.next   
-        
+        return merge.next
